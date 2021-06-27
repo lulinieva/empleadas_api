@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.*;
 import ar.com.ada.api.empleadas.entities.*;
 import ar.com.ada.api.empleadas.models.response.GenericResponse;
+import ar.com.ada.api.empleadas.services.CategoriaService;
 
 @RestController
 public class CategoriaController {
@@ -35,7 +36,7 @@ public class CategoriaController {
     //GET /categorias
     @GetMapping("/categorias")//hacer el mapping
     public ResponseEntity<List<Categoria>> traerCategorias () {//return Reponse Entity
-        return ResponseEntity.ok(services.traerCategorias());//return Entity con el alor esperado en este caso(ok)
+        return ResponseEntity.ok(service.traerCategorias());//return Entity con el alor esperado en este caso(ok)
     }
 
     
