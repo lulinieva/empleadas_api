@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.Optional;
+
 
 import ar.com.ada.api.empleadas.entities.Categoria;
 import ar.com.ada.api.empleadas.repos.CategoriaRepository;
@@ -13,19 +15,26 @@ public class CategoriaService {
 
     @Autowired
     CategoriaRepository repo;
-    
-    public void crearCategoria(Categoria categoria){
-        repo.save(categoria);
 
+    public void crearCategoria(Categoria categoria) {
+        repo.save(categoria);
     }
 
-    public List<Categoria> traerCategorias(){
+    public List<Categoria> traerCategorias() {
         return repo.findAll();
     }
 
+    public Categoria buscarCategoria(Integer categoriaId) {
 
+        Optional<Categoria> resultado = repo.findById(categoriaId);
+        Categoria categoria = null;
 
+        if (resultado.isPresent())
+            categoria = resultado.get();
 
+        return categoria;
 
+    }
 }
+
 

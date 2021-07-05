@@ -105,8 +105,8 @@ public class Empleada {
     }
 
 
-    public void setFechaAlta(Date fechaAlta) {
-        this.fechaAlta = fechaAlta;
+    public void setFechaAlta(java.util.Date date) {
+        this.fechaAlta = (Date) date;
     }
 
 
@@ -117,8 +117,8 @@ public class Empleada {
 
 
 
-    public void setFechaBaja(Date fechaBaja) {
-        this.fechaBaja = fechaBaja;
+    public void setFechaBaja(java.util.Date date) {
+        this.fechaBaja = (Date) date;
     }
 
 
